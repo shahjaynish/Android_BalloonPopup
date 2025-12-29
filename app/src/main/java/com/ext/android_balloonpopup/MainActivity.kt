@@ -1,5 +1,6 @@
 package com.ext.android_balloonpopup
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +26,8 @@ class MainActivity : AppCompatActivity() {
             BalloonPopup(this)
                 .setText("Hello from Balloon Library 🎈")
                 .setArrowPosition(ArrowPosition.BOTTOM)
+                .setBackgroundColor(Color.parseColor("#6200EE"))
+                .setTextColor(Color.YELLOW)
                 .show(binding.btnShowTooltip)
         }
     }

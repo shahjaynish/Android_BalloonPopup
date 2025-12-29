@@ -16,13 +16,15 @@
 
     <!-- Content -->
     <LinearLayout
+        android:id="@+id/balloonContent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="12dp"
         android:background="@drawable/bg_balloon">
 
-        <TextView
+
+    <TextView
             android:id="@+id/tvText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
