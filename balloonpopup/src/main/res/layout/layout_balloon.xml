@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
 
     <!-- Arrow -->
     <ImageView
         android:id="@+id/ivArrow"
         android:layout_width="12dp"
-        android:layout_height="6dp"
-        android:visibility="gone"
-        android:src="@drawable/triangle" />
+        android:layout_height="12dp"
+        android:visibility="gone"/>
 
     <!-- Content -->
     <LinearLayout
@@ -23,15 +23,12 @@
         android:padding="12dp"
         android:background="@drawable/bg_balloon">
 
-
-    <TextView
+        <TextView
             android:id="@+id/tvText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tooltip"
             android:textSize="14sp"
-            android:textColor="@android:color/white" />
-
+            android:textColor="@android:color/white"/>
     </LinearLayout>
 
 </LinearLayout>

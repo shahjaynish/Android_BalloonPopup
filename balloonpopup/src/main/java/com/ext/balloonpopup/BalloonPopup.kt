@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.PopupWindow
 import android.widget.TextView
 import com.ext.balloonpopup.utils.getLocation
@@ -31,6 +32,7 @@ class BalloonPopup(private val context: Context) {
 
         val tvText = view.findViewById<TextView>(R.id.tvText)
         val arrow = view.findViewById<ImageView>(R.id.ivArrow)
+        val rootLayout = view.findViewById<LinearLayout>(R.id.rootLayout)
 
 
 
@@ -42,6 +44,7 @@ class BalloonPopup(private val context: Context) {
         contentLayout.background.mutate().setTint(config.backgroundColor)
 
         // Arrow drawable
+        // Set arrow drawable FIRST
         when (config.arrowPosition) {
             ArrowPosition.TOP -> arrow.setImageResource(R.drawable.triangle_up)
             ArrowPosition.BOTTOM -> arrow.setImageResource(R.drawable.triangle)
@@ -49,7 +52,9 @@ class BalloonPopup(private val context: Context) {
             ArrowPosition.RIGHT -> arrow.setImageResource(R.drawable.triangle_right)
         }
         arrow.visibility = View.VISIBLE
-        arrow.drawable.mutate().setTint(config.backgroundColor)
+
+        // 🎨 SAFELY tint arrow AFTER drawable is set
+        arrow.drawable?.mutate()?.setTint(config.backgroundColor)
 
         // Measure popup view
         view.measure(
