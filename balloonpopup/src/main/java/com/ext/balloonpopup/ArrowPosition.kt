@@ -1,4 +1,8 @@
 package com.ext.balloonpopup
 
-class ArrowPosition {
+enum class ArrowPosition {
+    TOP,
+    BOTTOM,
+    LEFT,
+    RIGHT
 }

@@ -1,4 +1,9 @@
 package com.ext.balloonpopup.utils
 
-class ViewUtils {
+import android.view.View
+
+fun View.getLocation(): IntArray {
+    val location = IntArray(2)
+    getLocationOnScreen(location)
+    return location
 }
